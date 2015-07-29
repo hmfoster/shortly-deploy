@@ -3,6 +3,10 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     concat: {
+      client:{
+        src: ['public/client/**/*.js','public/lib/**/*.js'],
+        dest: 'public/dist/client.js'
+      }
     },
 
     mochaTest: {
@@ -21,6 +25,7 @@ module.exports = function(grunt) {
     },
 
     uglify: {
+
     },
 
     jshint: {
@@ -94,8 +99,13 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('build', [
+    'concat',
+    // 'jshint',
+    // 'test',
+    // 'uglify', 
+    // 'cssmin'
   ]);
-
+//file uglify, minifycss
   grunt.registerTask('upload', function(n) {
     if(grunt.option('prod')) {
       // add your production server task here
