@@ -46,6 +46,10 @@ module.exports = function(grunt) {
     },
 
     cssmin: {
+      files: {
+        src: 'public/style.css',
+        dest: 'public/dist/style.min.css'
+      }
     },
 
     watch: {
@@ -106,7 +110,7 @@ module.exports = function(grunt) {
     // 'jshint',
     // 'test',
     'uglify', 
-    // 'cssmin'
+    'cssmin'
   ]);
 //file uglify, minifycss
   grunt.registerTask('upload', function(n) {
