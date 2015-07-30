@@ -25,7 +25,7 @@ module.exports = function(grunt) {
     nodemon: {
       dev: {
         script: 'server.js'
-      }
+      },
     },
 
     uglify: {
@@ -107,11 +107,6 @@ module.exports = function(grunt) {
     grunt.task.run([ 'watch' ]);
   });
   
-  grunt.registerTask('linter', function(){
-    // grunt.task.run(['jshint']);
-    // if (ifErrors) { return false; }
-  });
-  
   ////////////////////////////////////////////////////
   // Main grunt tasks
   ////////////////////////////////////////////////////
@@ -138,6 +133,8 @@ module.exports = function(grunt) {
 
   grunt.registerTask('deploy', [
     // add your deploy tasks here
+    'build',
+    'server-dev'
   ]);
 
 
