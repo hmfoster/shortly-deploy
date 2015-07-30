@@ -45,7 +45,7 @@ module.exports = function(grunt) {
         '**/**/*.js'
       ],
       options: {
-        force: 'false',
+        force: false,
         jshintrc: '.jshintrc',
         ignores: [
           'public/lib/**/*.js',
@@ -106,7 +106,12 @@ module.exports = function(grunt) {
 
     grunt.task.run([ 'watch' ]);
   });
-
+  
+  grunt.registerTask('linter', function(){
+    // grunt.task.run(['jshint']);
+    // if (ifErrors) { return false; }
+  });
+  
   ////////////////////////////////////////////////////
   // Main grunt tasks
   ////////////////////////////////////////////////////
