@@ -123,7 +123,6 @@ module.exports = function(grunt) {
   grunt.registerTask('build', [
     'concat',
     'jshint',
-    'test',
     'uglify', 
     'cssmin'
   ]);
@@ -133,6 +132,7 @@ module.exports = function(grunt) {
       // add your production server task here
       grunt.task.run(['shell']);
     } else {
+      grunt.task.run([ 'test' ]);
       grunt.task.run([ 'server-dev' ]);
     }
   });
