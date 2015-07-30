@@ -25,7 +25,10 @@ module.exports = function(grunt) {
     },
 
     uglify: {
-
+      client: {
+        src: 'public/dist/client.js',
+        dest: 'public/dist/client.min.js'
+      }
     },
 
     jshint: {
@@ -102,7 +105,7 @@ module.exports = function(grunt) {
     'concat',
     // 'jshint',
     // 'test',
-    // 'uglify', 
+    'uglify', 
     // 'cssmin'
   ]);
 //file uglify, minifycss
