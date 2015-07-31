@@ -2,7 +2,11 @@
 // var path = require('path');
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/shortlydb'); //need to change to conditional
+
+var connectionString = process.env.CUSTOMCONNSTR_MONGOLAB_URI || 'mongodb://localhost/shortlydb';
+
+mongoose.connect(connectionString);
+
 var db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error: '));
