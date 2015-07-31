@@ -11,7 +11,7 @@ var Link = require('../app/models/link');
 // NOTE: these tests are designed for mongo!
 /////////////////////////////////////////////////////
 
-xdescribe('', function() {
+describe('', function() {
 
   beforeEach(function(done) {
     // Log out currently signed in user
@@ -39,7 +39,7 @@ xdescribe('', function() {
         .end(done);
     });
 
-    describe('Shortening links:', function() {
+    xdescribe('Shortening links:', function() {
 
       it('Responds with the short code', function(done) {
         request(app)
